@@ -1,22 +1,24 @@
 .App {
+  display: flex;
+  background-color: #fff;
+  padding: $gap ;
+
+}
+
+.column {
+  border: 1px #ccc solid;
+  flex-grow: 1;
+  margin: 25px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card {
+  padding: 25px;
+/*  border: 1px blue solid; */
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+.card span {
+  flex-grow: 1;
+  text-align: center;
 }
