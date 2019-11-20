@@ -1,14 +1,16 @@
 import React from "react"
 
-export default ({card,
-canMoveLeft,
-canMoveRight,
-onMoveLeft,
-onMoveRight
+export default ({
+  card,
+  canMoveLeft,
+  canMoveRight,
+  canRemoveCard,
+  onMoveLeft,
+  onMoveRight
 }) => (
-  <div className = "card">
-    {canMoveLeft && <button onClick = {onMoveLeft}>{'<'}</button>}
-    <span className = "title">{card.name}</span>
-    {canMoveLeft && <button onClick = {onMoveRight}>{'>'}</button>}
+  <div className="card">
+    {canMoveLeft && <button onClick={onMoveLeft}>{'<'}</button>}
+    <span className="title">{card.name}</span>
+    {canMoveRight && <button onClick={onMoveRight}>{'>'}</button>}
   </div>
 )
