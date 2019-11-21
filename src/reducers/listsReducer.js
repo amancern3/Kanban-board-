@@ -4,7 +4,12 @@ const initialState = [
     id: 1,
     cards: [
       {
-
+        id: 0,
+        text: 'hello'
+      },
+      {
+        id: 1,
+        text: 'sup'
       }
     ]
   },
@@ -13,15 +18,18 @@ const initialState = [
     id: 1,
     cards: [
       {
-
+        id: 0,
+        text: 'maybe'
       }
     ]
-  },{
+  },
+{
   title: "Upstream",
-  id: 1,
+  id: 2,
   cards: [
     {
-
+      id: 0,
+      text: 'font is too big'
     }
   ]
 }

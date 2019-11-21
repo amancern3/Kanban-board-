@@ -7,12 +7,24 @@ class App extends Component {
     const {lists} = this.props;
     return (
       <div className = "App">
-        {lists.map(list =>(<Column title = {list.title}
-          cards = {list.cards}  />  ))}
+        <div style= {styles.listsContainer}>
+            {lists.map(list => (
+              <Column title = {list.title}
+              cards = {list.cards}  />
+          )) }
       </div>
-    );
-  } }
+    </div>
+  );
+  }
+}
 
+const styles = {
+  listsContainer: {
+    display: "flex",
+    flexDirection: "row",
+    marginRight: 8
+  }
+};
 
 const mapStateToProps = state => ({
     lists: state.lists
