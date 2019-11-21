@@ -5,11 +5,9 @@ import CardContent from "@material-ui/core/CardContent";
 
 const card = ({text}) => {
   return(
-    <Card style = {styles.cardContainer}>
+    <Card style = {styles.cardContaniner}>
       <CardContent>
-        <Typography gutterBottom>
-          {text}
-          </Typography>
+        <Typography gutterBottom>{text}</Typography>
       </CardContent>
     </Card>
   );
@@ -17,7 +15,8 @@ const card = ({text}) => {
 
 const styles = {
   cardContaniner: {
-    marginBottom: 8
+    marginBottom: 8 
   }
-}
+};
+
 export default card;
