@@ -1,32 +1,31 @@
 import React, { Component } from "react";
 import Column from "./Column";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 
 class App extends Component {
-  render () {
-    const {lists} = this.props;
+  render() {
+    const { lists } = this.props;
     return (
-      <div className = "App">
-        <div style= {styles.listsContainer}>
-            {lists.map(list => (
-              <Column title = {list.title}
-              cards = {list.cards}  />
-          )) }
+      <div className="App">
+        <div style={styles.listsContainer}>
+          {lists.map(list => (
+            <Column key={list.id} title={list.title} cards={list.cards} />
+          ))}
+        </div>
       </div>
-    </div>
-  );
+    );
   }
 }
 
 const styles = {
   listsContainer: {
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "row"
   }
 };
 
 const mapStateToProps = state => ({
-    lists: state.lists
+  lists: state.lists
 });
 
-export default connect(mapStateToProps) (App);
+export default connect(mapStateToProps)(App);

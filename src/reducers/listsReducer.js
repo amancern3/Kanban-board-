@@ -1,15 +1,15 @@
 const initialState = [
   {
     title: "Doing",
-    id: 1,
+    id: 0,
     cards: [
       {
         id: 0,
-        text: 'hello'
+        text: "hello"
       },
       {
         id: 1,
-        text: 'sup'
+        text: "sup"
       }
     ]
   },
@@ -19,26 +19,26 @@ const initialState = [
     cards: [
       {
         id: 0,
-        text: 'maybe'
+        text: "maybe"
       }
     ]
   },
-{
-  title: "Upstream",
-  id: 2,
-  cards: [
-    {
-      id: 0,
-      text: 'font is too big'
-    }
-  ]
-}
+  {
+    title: "Upstream",
+    id: 2,
+    cards: [
+      {
+        id: 0,
+        text: "font is too big"
+      }
+    ]
+  }
 ];
 
 const listsReducer = (state = initialState, action) => {
   switch (action.type) {
     default:
-    return state;
+      return state;
   }
 };
 
