@@ -57,7 +57,7 @@ class ActionButton extends React.Component {
       ? "Enter list title"
       : "Enter a title for this card...";
 
-    const buttonTutle = list ? "Add List" : "Add Card";
+    const buttonTitle = list ? "Add List" : "Add Card";
 
     return (
       <div>
