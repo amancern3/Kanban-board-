@@ -1,7 +1,8 @@
 import React from "react";
 import Icon from "@material-ui//core/Icon";
 import TextArea from "react-textarea-autosize";
-import Card from "./Card";
+import Card from "@material-ui/core/Card";
+import Button from "@material-ui/core/Button";
 
 class ActionButton extends React.Component {
   state = {
@@ -11,7 +12,7 @@ class ActionButton extends React.Component {
 
   openForm = () => {
     this.setState({
-      formOpen: false
+      formOpen: true
     });
   };
 
@@ -83,6 +84,14 @@ class ActionButton extends React.Component {
             }}
           />
         </Card>
+        <div>
+          <Button
+            variant="contained"
+            style={{ color: "white", backgroundColor: "#5aac44" }}
+          >
+            {buttonTitle}{" "}
+          </Button>
+        </div>
       </div>
     );
   };

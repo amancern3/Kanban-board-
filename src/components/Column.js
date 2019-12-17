@@ -3,6 +3,7 @@ import Card from "./Card";
 import ActionButton from "./ActionButton";
 
 const Column = ({ title, cards }) => {
+  console.log(cards);
   return (
     <div style={styles.container}>
       <h4> {title} </h4>
