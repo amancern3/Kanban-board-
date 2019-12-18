@@ -2,7 +2,7 @@ import React from "react";
 import Card from "./Card";
 import ActionButton from "./ActionButton";
 
-const Column = ({ title, cards }) => {
+const Column = ({ title, cards, listID }) => {
   console.log(cards);
   return (
     <div style={styles.container}>
@@ -10,7 +10,7 @@ const Column = ({ title, cards }) => {
       {cards.map(card => (
         <Card key={card.id} text={card.text} />
       ))}
-      <ActionButton />
+      <ActionButton listID={listID} />
     </div>
   );
 };

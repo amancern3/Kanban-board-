@@ -10,7 +10,12 @@ class App extends Component {
       <div className="App">
         <div style={styles.listsContainer}>
           {lists.map(list => (
-            <Column key={list.id} title={list.title} cards={list.cards} />
+            <Column
+              listID={list.id}
+              key={list.id}
+              title={list.title}
+              cards={list.cards}
+            />
           ))}
           <ActionButton list />
         </div>
