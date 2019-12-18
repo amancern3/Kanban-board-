@@ -31,7 +31,7 @@ class ActionButton extends React.Component {
   renderAddButton = () => {
     const { list } = this.props;
 
-    const buttonText = list ? "Add another list" : "Add another card";
+    const buttonText = list ? "Add another Column" : "Add another card";
     const buttonOpacity = list ? 1 : 0.5;
     const buttonTextColor = list ? "white" : "inherit";
     const buttonTextBackground = list ? "rgba(0,0,0,.15)" : "inherit";
@@ -40,7 +40,7 @@ class ActionButton extends React.Component {
       <div
         onClick={this.openForm}
         style={{
-          ...styles.openForButtonGroup,
+          ...styles.openFormButtonGroup,
           opacity: buttonOpacity,
           color: buttonTextColor,
           backgroundColor: buttonTextBackground
@@ -84,13 +84,14 @@ class ActionButton extends React.Component {
             }}
           />
         </Card>
-        <div>
+        <div style={styles.formButtonGroup}>
           <Button
             variant="contained"
             style={{ color: "white", backgroundColor: "#5aac44" }}
           >
             {buttonTitle}{" "}
           </Button>
+          <Icon style={{ marginLeft: 8, cursor: "pointer" }}>close</Icon>
         </div>
       </div>
     );
@@ -110,6 +111,11 @@ const styles = {
     height: 36,
     width: 272,
     paddingLeft: 10
+  },
+  formButtonGroup: {
+    marginTop: 8,
+    display: "flex",
+    alignItems: "center"
   }
 };
 
