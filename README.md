@@ -1,4 +1,4 @@
-### Kanban Board
+## Kanban Board
 
 This project is meant to be project management software that focuses on the Kanban methodolgy. 
  - Visualize your work
