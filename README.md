@@ -1,3 +1,13 @@
+### Kanban Board
+
+This project is meant to be project management software that focuses on the Kanban methodolgy. 
+ - Visualize your work
+ - Limit your work in progress to focus on your goal
+ - Drag and drop tasks to manage your project
+ - Self-hosted
+ - Super simple installation
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
