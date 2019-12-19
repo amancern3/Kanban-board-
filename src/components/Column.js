@@ -6,7 +6,7 @@ import { Droppable } from "react-beautiful-dnd";
 const Column = ({ title, cards, listID }) => {
   console.log(cards);
   return (
-    <Droppable dropppableID={String(listID)}>
+    <Droppable droppableId={String(listID)}>
       {provided => (
         <div
           {...provided.droppableProps}

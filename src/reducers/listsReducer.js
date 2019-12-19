@@ -1,13 +1,15 @@
 import { CONSTANTS } from "../actions";
 let listID = 3;
-let cardID = 1;
+let cardID = 6;
+
 const initialState = [
   {
     title: "Doing",
     id: "list-${0}",
     cards: [
       {
-        //  id: "card-${0}"
+        id: "card-${0}",
+        text: "Testing dnd"
       }
     ]
   },
@@ -16,14 +18,20 @@ const initialState = [
     id: "list-${1}",
     cards: [
       {
-        //  id: "card-${0}"
+        id: "card-${1}",
+        text: "In progress card test"
       }
     ]
   },
   {
     title: "Upstream",
     id: "list-${2}",
-    cards: []
+    cards: [
+      {
+        id: "card-${2}",
+        text: "upstream card test"
+      }
+    ]
   }
 ];
 
