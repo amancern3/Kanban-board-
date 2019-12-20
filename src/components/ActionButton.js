@@ -6,6 +6,8 @@ import Button from "@material-ui/core/Button";
 import { connect } from "react-redux";
 import { addList, addCard } from "../actions";
 
+// Button functionality.
+
 class ActionButton extends React.Component {
   state = {
     formOpen: false,
