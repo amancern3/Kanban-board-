@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
+
 import Column from "./Column";
 import { connect } from "react-redux";
 import ActionButton from "./ActionButton";
@@ -65,5 +67,9 @@ class App extends Component {
 const mapStateToProps = state => ({
   lists: state.lists
 });
+const e = React.createElement;
+
+const domContainer = document.querySelector('#root');
+ReactDOM.render(e(App), domContainer);
 
 export default connect(mapStateToProps)(App);
