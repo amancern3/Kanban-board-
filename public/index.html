@@ -2,6 +2,13 @@
 <html lang="en">
 
 <head>
+    <style>
+        body {
+            background-image: url("logo192.png");
+            background-color: chartreuse;
+        }
+    </style>
+
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
@@ -28,6 +35,8 @@
 </head>
 
 <body>
+    <h1 align="center" , style="font-family: verdana;"> Kanban Board </h1>
+
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
 
@@ -48,6 +57,19 @@
     -->
 </body>
 <script>
+    class Person {
+        constructor(fn, ln, dob) {
+            this.fn = fn
+            this.ln = ln
+            this.dob = new Date(dob);
+        }
+        getdob() {
+            return this.dob.getFullYear();
+        }
+    }
+
+    const pp = new Person('Mary', 'Smith', '1-1-2000')
+    console.log(pp.getdob());
 </script>
 
 </html>
