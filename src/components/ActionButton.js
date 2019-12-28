@@ -4,7 +4,7 @@ import TextArea from "react-textarea-autosize";
 import Card from "@material-ui/core/Card";
 import Button from "@material-ui/core/Button";
 import { connect } from "react-redux";
-import { addList, addCard } from "../actions";
+import { addList, addCard , removeCard, removeList} from "../actions";
 
 // Button functionality.
 
@@ -57,6 +57,15 @@ class ActionButton extends React.Component {
     }
   };
 
+  handleRemoveList = (listID) => {
+    let test = this.state.list; 
+    test.splice.splice(listID, 1)
+    this.setState({
+      list: test
+    })
+  }
+  
+
   renderAddButton = () => {
     const { list } = this.props;
 
@@ -69,7 +78,7 @@ class ActionButton extends React.Component {
       <div
         onClick={this.openForm}
         style={{
-          ...styles.openFormButtonGroup,
+          ...styles.openForButtonGroup,
           opacity: buttonOpacity,
           color: buttonTextColor,
           backgroundColor: buttonTextBackground
@@ -121,7 +130,11 @@ class ActionButton extends React.Component {
           >
             {buttonTitle}{" "}
           </Button>
-          <Icon style={{ marginLeft: 8, cursor: "pointer" }}>close</Icon>
+          <Button
+            onMouseDown = {list ? this.closeForm : this.closeForm}
+          >
+            <Icon style={{ marginLeft: 8, cursor: "pointer" }}>close</Icon> 
+          </Button>
         </div>
       </div>
     );

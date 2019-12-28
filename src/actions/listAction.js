@@ -7,6 +7,13 @@ export const addList = title => {
   };
 };
 
+export const removeList = title => {
+  return {
+    type: CONSTANTS.REMOVE_LIST, 
+    payload: title
+  }
+}
+
 // list sorting DnD
 export const sort = (
   droppableIdStart,
