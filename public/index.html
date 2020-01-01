@@ -6,15 +6,26 @@
         body {
             background-color: hsl(202, 100%, 32%);
             line-height: 1.3em;
-           
         }
+           
+        
 
         .overlay {
-            color: rgba(0,0,0,0.5);
-            font-size: 90px;
-            position: absolute;
-            top: 0; left: 0;
-            margin: 0;
+            box-sizing: border-box;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+            background-color: yellow;
+            border-radius: 0px;
+            position: relative;
+            z-index: 1100;
+            height: 42px;
+            width: 42%;
+            text-indent: 180px;
+            align-items: center;
+            font-size: 34px;
+            display: flex;
+            padding-left: 24px;
+            padding-right: 24px;
+
         }
     </style>
 
@@ -46,9 +57,10 @@
 <body>
     
     <h1 align="center" , style="font-family: verdana;",  position= "relative";color:"rgba(255,255,255)" >
-         Kanban Board
+        <span class = "overlay">Kanban Board</span>
     </h1>
     
+ 
     <h1 id = "overlay"></h1>
   
     <noscript>You need to enable JavaScript to run this app.</noscript>
