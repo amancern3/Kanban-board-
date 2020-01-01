@@ -25,13 +25,12 @@ const CardContaniner = styled.div`
 const card = ({ text, id, index }) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl)
 
   const handleClick = event => {
     setAnchorEl(event.currentTarget)
   }
 
-  const handleClose = event => {
+  const handleClose = () => {
     setAnchorEl(null)
   }
 
@@ -57,9 +56,11 @@ const card = ({ text, id, index }) => {
                       open={Boolean(anchorEl)}
                       onClose={handleClose}
                     >                        
-                      <MenuItem onClick={handleClick}>Profile</MenuItem>
-                      <MenuItem onClick={handleClick}>My account</MenuItem>
-                      <MenuItem onClick={handleClick}>Logout</MenuItem>  
+                      {options.map(option => (
+                        <MenuItem key={option} selected={option === 'Edit'} onClick={handleClose}>
+                          {option}
+                        </MenuItem>
+                      ))}
                     </Menu> 
                     <span class="MuiIconButton-label">
                       <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
