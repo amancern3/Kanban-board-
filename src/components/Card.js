@@ -9,12 +9,32 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Popover from '@material-ui/core/Popover';
 
+const options = [
+  'Edit',
+  'Delete'
+];
+
+const ITEM_HEIGHT = 48 ;
+
+
 const CardContaniner = styled.div`
   margin-bottom: 8px;
 `;
 
 
 const card = ({ text, id, index }) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl)
+
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const handleClose = event => {
+    setAnchorEl(null)
+  }
+
   return (
     <Draggable draggableId={String(id)} index={index}>
       {provided => (
@@ -30,13 +50,13 @@ const card = ({ text, id, index }) => {
                   {text}
                   <button class="MuiButtonBase-root MuiIconButton-root" tabindex="0" type="button" aria-haspopup="true" aria-label="See more"  aria-controls = "simple-menu" onClick = {handleClick}>              
                    
-                   <Menu /*
+                   <Menu 
                       id="simple-menu"
                       anchorEl={anchorEl}
                       keepMounted
                       open={Boolean(anchorEl)}
                       onClose={handleClose}
-                    */>                        
+                    >                        
                       <MenuItem onClick={handleClick}>Profile</MenuItem>
                       <MenuItem onClick={handleClick}>My account</MenuItem>
                       <MenuItem onClick={handleClick}>Logout</MenuItem>  
@@ -59,17 +79,5 @@ const card = ({ text, id, index }) => {
 };
 
 
-function handleClick (){
- return ( <Popover
-    anchorOrigin = {{
-      vertical: 'top',
-      horizontal: 'left',
-    }}
-    transformOrigin = {{
-      vertical: 'top',
-      horizontal: 'left',
-    }}
-  > content </Popover>
- )
-}
+
 export default card;
