@@ -35,6 +35,13 @@ const card = ({ text, id, index }) => {
   }
 
   return (
+    window.addEventListener('mouseup', function(event) {
+      var box = this.document.getElementById('card_menu')
+      if(event.target !== box ) {
+        handleClose()
+      }
+    })
+    ,
     <Draggable draggableId={String(id)} index={index}>
       {provided => (
         <CardContaniner
@@ -48,14 +55,13 @@ const card = ({ text, id, index }) => {
                 <div class="card_menu">
                   {text}
                   <button class="MuiButtonBase-root MuiIconButton-root" tabindex="0" type="button" aria-haspopup="true" aria-label="See more"  aria-controls = "simple-menu" onClick = {handleClick}>              
-                   
                    <Menu 
-                      id="simple-menu"
+                      id="simple_menu"
                       anchorEl={anchorEl}
                       keepMounted
                       open={Boolean(anchorEl)}
                       onClose={handleClose}
-                    >                        
+                    >            
                       {options.map(option => (
                         <MenuItem key={option} selected={option === 'Edit'} onClick={handleClose}>
                           {option}
@@ -78,7 +84,5 @@ const card = ({ text, id, index }) => {
     </Draggable>
   );
 };
-
-
 
 export default card;
