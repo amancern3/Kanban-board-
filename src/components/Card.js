@@ -9,6 +9,8 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Popover from '@material-ui/core/Popover';
 
+
+// menu functionality 
 const options = [
   'Edit',
   'Delete'
@@ -35,6 +37,8 @@ const card = ({ text, id, index }) => {
   }
 
   return (
+
+    // clicking away from the menu 
     window.addEventListener('mouseup', function(event) {
       var box = this.document.getElementById('card_menu')
       if(event.target !== box ) {
@@ -42,6 +46,7 @@ const card = ({ text, id, index }) => {
       }
     })
     ,
+    // card layout ! DnD --> card --> menu --> editing functionality 
     <Draggable draggableId={String(id)} index={index}>
       {provided => (
         <CardContaniner
@@ -68,7 +73,7 @@ const card = ({ text, id, index }) => {
                         </MenuItem>
                       ))}
                     </Menu> 
-                    <span class="MuiIconButton-label">
+                    <span class="MuiIconButton-label" >
                       <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
                         <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
                       </svg>
