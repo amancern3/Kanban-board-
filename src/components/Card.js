@@ -7,6 +7,7 @@ import { Draggable } from "react-beautiful-dnd";
 import styled from "styled-components";
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import ActionButton from "./ActionButton.js";
 import Popover from '@material-ui/core/Popover';
 
 
@@ -24,17 +25,18 @@ const CardContaniner = styled.div`
 `;
 
 
-const card = ({ text, id, index }) => {
+const card = ({ text, id, index, prop }) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = event => {
     setAnchorEl(event.currentTarget)
-  }
+  };
 
   const handleClose = () => {
     setAnchorEl(null)
   }
+
 
   return (
 
@@ -88,6 +90,7 @@ const card = ({ text, id, index }) => {
       )}
     </Draggable>
   );
+  
 };
 
 export default card;
