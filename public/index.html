@@ -4,32 +4,14 @@
 <!-- body styling for website 
 followed by app bar overlay, need to figure out how to make it wrap when window is halfed-->
 <head>
+    <link rel="stylesheet" type = "text/css" href="assests/index.css" />
     <style>
 
         body {
             background-color: hsl(202, 100%, 32%);
-            line-height: 1.3em;
         }
 
-        .overlay {
-            overflow: hidden;
-            box-sizing: border-box;
-            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
-            background-color: yellow;
-            border-radius: 0px;
-            position: relative;
-            z-index: 1100;
-            height: 42px;
-            width: 42%;
-            text-indent: 180px;
-            align-items: center;
-            font-size: 34px;
-            white-space: nowrap;
-            display: flex;
-            padding-left: 24px;
-            padding-right: 24px;
-
-        }
+        
     </style>
 
     <meta charset="utf-8" />
@@ -54,48 +36,38 @@ followed by app bar overlay, need to figure out how to make it wrap when window 
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-  
+  <title>My website</title>
 </head>
 
 <body>
+    <div id = "container">
+        
+        <div id = "header">
+            <h1>Kanban Board</h1>
+        </div>
+
+        <div id = "content">
+            <div id = "nav">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a class href = "selected">Teams</a></li>
+                    <li><a class href = "selected">About</a></li>
+                    <li><a class href = "selected">Home</a></li>
+                </ul>
+            </div>
+
+            <div id="root">
+
+            </div>
+
+        </div>
+        
+        <div id="footer">
+        
+        </div>
+        
+    </div>
     
-    
- 
-    <h1 id = "overlay"></h1>
-  
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-
-    <!----  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-      <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-
-      < Load our React component. --
-      <script src="../src/components/App.jsx"></script>
-    
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
 </body>
-<script>
-    class Person {
-        constructor(fn, ln, dob) {
-            this.fn = fn
-            this.ln = ln
-            this.dob = new Date(dob);
-        }
-        getdob() {
-            return this.dob.getFullYear();
-        }
-    }
-
-    const pp = new Person('Mary', 'Smith', '1-1-2000')
-    console.log(pp.getdob());
-</script>
 
 </html>
